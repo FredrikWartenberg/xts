@@ -12,7 +12,7 @@
   major.ticks = "auto", minor.ticks = NULL,
   grid.ticks.on = "auto", grid.ticks.lwd = 1, grid.ticks.lty = 1,
   grid.col = "darkgray", labels.col = "#333333", format.labels = TRUE,
-  grid2 = "#F5F5F5", legend.loc = NULL, extend.xaxis = FALSE)
+  grid2 = "#F5F5F5", yticks.density = 0 ,legend.loc = NULL, extend.xaxis = FALSE)
 \method{lines}{xts}(x, ..., main = "", on = 0, col = NULL, type = "l",
   lty = 1, lwd = 1, pch = 1)
 \method{points}{xts}(x, ..., main = "", on = 0, col = NULL, pch = 1)
@@ -83,6 +83,10 @@ separate panel.}
 \item{format.labels}{label format to draw lower frequency x-axis ticks and labels passed to \code{\link{axTicksByTime}}}
 
 \item{grid2}{color for secondary x axis grid}
+
+\item{yticks.density}{Density of tickmarks on y axis. The
+  density will be increased by the given factor (default = 1). The
+  tickmarks is determined by means of the pretty function with n=5 as default.}
 
 \item{legend.loc}{places a legend into one of nine locations on the chart:
 bottomright, bottom, bottomleft, left, topleft, top, topright, right, or
