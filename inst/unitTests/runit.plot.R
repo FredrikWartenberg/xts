@@ -29,3 +29,13 @@ test.axTicksByTime_ticks.on_quarter <- function() {
   xtbt <- axTicksByTime(x, ticks.on = "quarters")
   checkIdentical(xtbt, tick_marks)
 }
+
+test.yticks.density <- function() {
+
+    ylim <- c(0,10) # legacy/default case
+    plt_default <- plot(x)
+    checkIdentical(pretty(ylim,5*1), plt_default$Env$y_grid_lines(ylim))
+
+    plt_2 <- plot(x,yticks.density=2) # half spacing case
+    checkIdentical(pretty(ylim,5*2), plt_2$Env$y_grid_lines(ylim))
+}
